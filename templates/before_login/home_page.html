@@ -1,4 +1,4 @@
-{% expands "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}
     Siksha Sathi - your all time study partner
@@ -9,5 +9,36 @@
 {% endblock %}
 
 {% block content %}
-    
+    <header>
+    <div class="page-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark px-3">
+    <!-- Parent container inside nav -->
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+            <!-- Brand (left side) -->
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home_page') }}">
+                <div class="navbar-logo">
+                    <img src="/static/images/logo.png" alt="">
+                </div>
+            </a>
+        
+            <!-- Toggler button for small screens -->
+            <button id="toggler-btn" class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navOptions">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!-- Collapsible nav content -->
+            <div class="collapse navbar-collapse" id="navOptions">
+                <ul class="navbar-nav ms-auto d-lg-flex align-items-center" id="navbaroptions">
+                    <li class="nav-item"><a href="{{ url_for('home_page') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Login | Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+</header>
 {% endblock %}
